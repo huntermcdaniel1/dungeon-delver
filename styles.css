@@ -1,0 +1,287 @@
+/* HTML Styles */
+html {
+    font-size: clamp(16px, 2vw, 24px);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: sans-serif;
+    background: black;
+    position: relative;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: sans-serif;
+    font-size: 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: sans-serif;
+    position: relative;
+
+    background: url('./assets/pictures/dungeon_wall2.png') no-repeat center center fixed;
+    background-size: cover;
+}
+canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* HUD Styles */
+#hud {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(0, 0);
+    color: white;
+    font-family: sans-serif;
+    z-index: 100;
+    pointer-events: none;
+}
+#health {
+    display: flex;
+    margin-bottom: 1vw;
+}
+.heart {
+    width: clamp(2rem, 6vw, 7rem);
+    height: clamp(2rem, 6vw, 7rem);
+    margin-right: 0.2rem;
+}
+#coins {
+    display: flex;
+    align-items: center;
+}
+.coin-icon {
+    width: clamp(2rem, 3vw, 5rem);
+    height: clamp(2rem, 3vw, 5rem);
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+}
+#coin-count {
+    font-size: clamp(2rem, 5vw, 5rem);
+    font-weight: bold;
+    text-shadow: 1rem 1rem 2rem black;
+}
+
+/* Heading Style */
+#credits {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: clamp(1rem, 2.5vw, 2.5rem);
+    font-weight: bold;
+    color: white;
+    font-family: sans-serif;
+    text-shadow: 0.2rem 0.2rem 0.5rem black;
+    z-index: 100;
+    pointer-events: none;
+}
+#objective {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: clamp(1rem, 2vw, 2rem);
+    font-weight: bold;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    text-shadow: 0.1rem 0.1rem 0.3rem black;
+    z-index: 100;
+    pointer-events: none;
+}
+
+
+/* Notification Styles */
+#damage-flash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: red;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+    transition: opacity 0.2s ease;
+}
+#center-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    text-shadow: 0.2rem 0.2rem 0.5rem black;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Game End Conditions */
+#center-final-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1001;
+    display: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    text-align: center;
+}
+#center-message-final {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-shadow: 0.2rem 0.2rem 0.5rem black;
+}
+#restart-button {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    padding: 1rem 2rem;
+    background-color: #444;
+    color: white;
+    border: 2px solid white;
+    border-radius: 2rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+#restart-button:hover {
+    background-color: #666;
+}
+
+
+/* Game Container */
+#game-container {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: filter 0.3s ease;
+}
+#game-container.blurred {
+    filter: blur(5px);
+}
+
+
+/* Title Screen */
+#title-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    color: white;
+    font-family: sans-serif;
+}
+#title-image {
+    width: clamp(200px, 80%, 800px);
+    margin-top: 0.2rem;
+}
+
+/* Mute Button */
+.mute-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #bebebe;
+    border: none;
+    border-radius: 1rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001;
+}
+.mute-btn img {
+    width: 30px;
+    height: 30px;
+}
+.mute-btn:hover img {
+    opacity: 0.8;
+}
+.mute-btn:hover {
+    background-color: #8f8f8f;
+}
+
+/* Difficulty Buttons */
+#difficulty-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#difficulty-buttons button {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    padding: 1rem 2rem;
+    background-color: #444;
+    color: white;
+    border: 2px solid white;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#difficulty-buttons button:hover {
+    background-color: #666;
+}
+
+/* Exit Button */
+#exit-button {
+    position: fixed;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    top: 20px;
+    right: 20px;
+    background-color: #bebebe;
+    border: none;
+    border-radius: 1rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001;
+}
+#exit-button:hover {
+    background-color: #666;
+}
+
+/* Help Button */
+#help-button {
+    position: fixed;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    bottom: 20px;
+    left: 20px;
+    background-color: #bebebe;
+    border: none;
+    border-radius: 1rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001;
+}
+#help-button:hover {
+    background-color: #666;
+}

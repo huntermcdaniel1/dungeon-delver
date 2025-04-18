@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dungeon Delver</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="shortcut icon" href="./assets/pictures/coin.png">
+    </head>
+    <div id="title-screen">
+        <img id="title-image" src="./assets/pictures/title.png" alt="Title Image" />
+        <div id="credits">Created by Hunter McDaniel</div>
+        <div id="difficulty-buttons">
+            <button id="easy-button">Easy</button>
+            <button id="medium-button">Medium</button>
+            <button id="hard-button">Hard</button>
+        </div>
+    </div>
+    <body>
+        <div id="game-container">
+            <div id="hud">
+                <div id="health">
+
+                </div>
+                <div id="coins">
+                    <img src="./assets/pictures/coin.png" class="coin-icon" />
+                    <span id="coin-count">0</span>
+                </div>
+            </div>
+            <div id="objective">Move the Player Character with the Arrow Keys.<br>Collect all coins and avoid spike traps to Win!</div>
+            <button id="exit-button">X</button>
+        </div>
+        <button id="mute-button" class="mute-btn">
+            <img id="mute-icon" src="./assets/pictures/audio-unmuted.png" />
+        </button>
+        <button id="help-button">?</button>
+        <div id="damage-flash"></div>
+        <div id="center-message"></div>
+        <div id="center-final-container" style="display: none;">
+            <div id="center-message-final"></div>
+            <button id="restart-button">Restart</button>
+        </div>        
+        <div id="center-message-final"></div>
+        <div id="final-message"></div>
+        <script type = "importmap">
+            {
+                "imports": {
+                    "three": 
+                        "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+                            "three/addons/": 
+                                "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+                }
+            }
+        </script>
+        <script type="module" src="main.js"></script>
+    </body>
+</html>
